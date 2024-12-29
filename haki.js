@@ -142,12 +142,16 @@ async function Abhiy() {
       const workType = config.WORK_TYPE;
       const statusMessage = `Nikka x md connected  ✅\nᴠᴇʀsɪᴏɴ: ${packageVersion}\n ᴄᴍᴅs: ${totalPlugins}\ᴡᴏʀᴋᴛʏᴘᴇ: ${workType}\n 𝗺𝗮𝗱𝗲 𝘄𝗶𝘁𝗵 ❤️ 𝗯𝘆 𝗵𝗮𝗸𝗶`;
 
-      
+      await conn.sendMessage(conn.user.id, {
+        image: { url: "https://files.catbox.moe/mnp025.jpg" },
+        caption: `\`\`\`${statusMessage}\`\`\``,
+      });
+    }
 
     try {
       conn.ev.on("creds.update", saveCreds);
-/*
-      conn.ev.removeAllListeners("group-participants.update"); // Prevent duplicate listeners
+
+     /* conn.ev.removeAllListeners("group-participants.update"); // Prevent duplicate listeners
 conn.ev.on("group-participants.update", async (data) => {
     try {
         const metadata = await conn.groupMetadata(data.id); // Fetch group metadata
@@ -179,7 +183,7 @@ conn.ev.on("group-participants.update", async (data) => {
     } catch (error) {
         console.error("Error in group-participants.update handler:", error);
     }
-});*/
+}); */
       conn.ev.removeAllListeners("messages.upsert");
       conn.ev.on("messages.upsert", async (m) => {
         if (m.type !== "notify") return;
