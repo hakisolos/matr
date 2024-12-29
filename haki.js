@@ -146,7 +146,7 @@ async function Abhiy() {
 
     try {
       conn.ev.on("creds.update", saveCreds);
-
+/*
       conn.ev.removeAllListeners("group-participants.update"); // Prevent duplicate listeners
 conn.ev.on("group-participants.update", async (data) => {
     try {
@@ -179,7 +179,7 @@ conn.ev.on("group-participants.update", async (data) => {
     } catch (error) {
         console.error("Error in group-participants.update handler:", error);
     }
-});
+});*/
       conn.ev.removeAllListeners("messages.upsert");
       conn.ev.on("messages.upsert", async (m) => {
         if (m.type !== "notify") return;
