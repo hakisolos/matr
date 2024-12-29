@@ -142,7 +142,7 @@ async function Abhiy() {
       const workType = config.WORK_TYPE;
       const statusMessage = `Nikka x md connected  ✅\nᴠᴇʀsɪᴏɴ: ${packageVersion}\n ᴄᴍᴅs: ${totalPlugins}\ᴡᴏʀᴋᴛʏᴘᴇ: ${workType}\n 𝗺𝗮𝗱𝗲 𝘄𝗶𝘁𝗵 ❤️ 𝗯𝘆 𝗵𝗮𝗸𝗶`;
 
-      await conn.sendMessage("connected");
+      
 
     try {
       conn.ev.on("creds.update", saveCreds);
